@@ -1,3 +1,39 @@
-body {
-  background: red !important;
+/* docs/.vitepress/theme/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600&family=Noto+Sans+SC:wght@400;600&display=swap');
+
+:root {
+  --vp-c-bg: #0A0A0A;
+  --vp-c-text-1: #FFFFFF;
+  --vp-c-text-2: #A1A1AA;
+}
+
+html, body {
+  background-color: #0A0A0A !important;
+  color: #FFFFFF;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+}
+
+/* 强制覆盖内容区域背景 */
+.VPContent, .VPDoc, .VPPage {
+  background-color: #0A0A0A !important;
+}
+
+/* 导航栏、侧边栏深色适配 */
+.VPNav {
+  background-color: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.VPSidebar {
+  background-color: rgba(10, 10, 10, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+/* 按钮样式（可选） */
+.VPButton {
+  border-radius: 999px !important;
+  background-color: #3B82F6 !important;
+  transition: all 0.25s ease !important;
 }
