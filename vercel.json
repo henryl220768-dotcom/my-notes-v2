@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/",
-      "destination": "/jyproclass1",
-      "permanent": true
+      "destination": "/jyproclass1/"
     }
   ]
 }
