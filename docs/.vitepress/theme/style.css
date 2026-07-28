@@ -1,39 +1,83 @@
 /* docs/.vitepress/theme/style.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600&family=Noto+Sans+SC:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
 
+/* 全局变量 */
 :root {
+  --vp-font-family-base: 'Inter', 'Noto Sans SC', -apple-system, system-ui, sans-serif;
   --vp-c-bg: #0A0A0A;
   --vp-c-text-1: #FFFFFF;
   --vp-c-text-2: #A1A1AA;
+  --vp-c-text-3: #71717A;
 }
 
+/* 全局背景与字体 */
 html, body {
   background-color: #0A0A0A !important;
   color: #FFFFFF;
-  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-family: var(--vp-font-family-base);
+  scroll-behavior: smooth;
 }
 
-/* 强制覆盖内容区域背景 */
-.VPContent, .VPDoc, .VPPage {
+/* 强制所有内容区域深色背景 */
+.VPContent, .VPDoc, .VPPage, .VPHome {
   background-color: #0A0A0A !important;
 }
 
-/* 导航栏、侧边栏深色适配 */
+/* 导航栏毛玻璃效果 */
 .VPNav {
-  background-color: rgba(10, 10, 10, 0.8) !important;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background-color: rgba(10, 10, 10, 0.7) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
 }
 
+/* 侧边栏毛玻璃效果 */
 .VPSidebar {
-  background-color: rgba(10, 10, 10, 0.9) !important;
-  backdrop-filter: blur(12px);
-  border-right: 1px solid rgba(255,255,255,0.04);
+  background-color: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-right: 1px solid rgba(255,255,255,0.05) !important;
 }
 
-/* 按钮样式（可选） */
+/* 首页标题渐变 */
+.VPHomeHero .name {
+  color: #FFFFFF !important;
+}
+.VPHomeHero .text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+.VPHomeHero .tagline {
+  color: #A1A1AA !important;
+}
+
+/* 按钮统一圆角与颜色 */
 .VPButton {
   border-radius: 999px !important;
   background-color: #3B82F6 !important;
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25) !important;
   transition: all 0.25s ease !important;
+}
+.VPButton:hover {
+  transform: scale(1.04) !important;
+  background-color: #2563EB !important;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.40) !important;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
 }
